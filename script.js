@@ -357,7 +357,6 @@ const footerAnim = ()=>{
       scrub: 2,
       start: "top 100%",
       end: "top top",
-      markers: true,
     }
   })
   gsap.from("footer #section1 *", {
@@ -394,3 +393,18 @@ const footerAnim = ()=>{
     }
   })  
 }
+
+const menuHeaders = document.querySelectorAll(".textHover");
+
+menuHeaders.forEach(header => {
+  header.setAttribute('data-text', header.textContent); 
+});
+const menuSection = document.querySelector("#menuSection")
+const menuButton = document.querySelector("#menuButton")
+const menuOption = true
+menuButton.addEventListener("click", ()=>{
+  menuSection.style.top = 0
+})
+document.querySelector("#menuClose").addEventListener("click", ()=>{
+  menuSection.style.top = "-100%"
+})

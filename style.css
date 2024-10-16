@@ -44,6 +44,81 @@ html {
   position: relative;
 }
 
+#menuSection{
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 65h;
+  z-index: 200;
+  background-color: #FAF8F3;
+  color: #0E0E0E;
+  padding: 2.5vw 2.3vw 0 2.3vw;
+  transition: all ease 1s;
+}
+
+#menuSection #sectionOne{
+  display: flex;
+  justify-content: space-between;
+}
+
+#menuSection #sectionOne #left h1{
+  font-family: rejHead;
+  font-weight: 100;
+  font-size: 1.7vw;
+}
+
+#menuSection #sectionOne #left video{
+  width: 22.5vw;
+  height: 14.9vw;
+  background-color: black;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.3vw;
+}
+
+#menuSection #sectionOne #left #videoDesc{
+  display: flex;
+  justify-content: space-between;
+}
+
+#menuSection #sectionOne #left #videoDesc h1{
+  font-size: 1.3vw;
+  font-weight: 100;
+  margin: 1vw 0 0 0;
+}
+
+#menuSection #sectionOne #right{
+  width: 41%;
+  display: flex;
+  flex-direction: column;
+}
+
+#menuSection #sectionOne #right h1{
+  font-size: 3.5vw;
+  font-weight: 100;
+  line-height: 3.5vw;
+}
+
+#menuSection #sectionOne #right button{
+  width: 10vw;
+}
+
+#menuSection #sectionTwo{
+  display: flex;
+  justify-content: space-between;
+  padding: 1vw 0;
+  border-top: 1px solid #0E0E0E;
+  font-size: 0.6vw;
+  margin-top: 1.3vw;
+}
+
+#menuSection #sectionTwo h1{
+  font-weight: 100;
+  display: flex;
+  gap: 1.3vw;
+}
+
 #page1 {
   height: 100%;
   width: 100%;
@@ -410,7 +485,7 @@ footer #section1 #left h1{
   font-weight: 400;
 }
 
-footer #section1 #left button{
+.buttonHover{
   border: 1px solid #FAF8F3;
   border-radius: 3vw; 
   padding: 1.2vw 1.7vw;
@@ -421,7 +496,7 @@ footer #section1 #left button{
   transition: all ease 0.4s;
 }
 
-footer #section1 #left button:hover{
+.buttonHover:hover{
   background-color: #FAF8F3;
   color: black;
 }
@@ -531,4 +606,33 @@ footer #section3 h1{
 
 footer #section3 h1 span{
   font-size: 20vw;
+}
+
+.textHover {
+  position: relative;
+  overflow: hidden;
+  transition: all 1s ease;
+}
+
+.textHover:hover{
+  color: transparent;
+}
+
+.textHover::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  transition: top 0.3s ease;
+  color: black;
+}
+
+.textHover:hover::after {
+  top: 0;
+  z-index: 1;
+}
+
+.textHover::before{
+  background-color: #0E0E0E;
 }
